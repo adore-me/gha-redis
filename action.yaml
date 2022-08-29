@@ -1,0 +1,21 @@
+name: 'AdoreMe Tech Redis Action'
+description: 'Run a Docker Redis instance'
+inputs:
+  version:
+    description: 'Redis version to use'
+    required: true
+    default: '6.0'
+outputs:
+  container-ip:
+    description: 'Container IP'
+    value: '${{ steps.start-redis.outputs.container-ip }}'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Deploy Redis'
+      id: start-redis
+      run: $GITHUB_ACTION_PATH/redis.sh
+      shell: bash
+      env:
+        INPUT_VERSION: ${{ inputs.version }}
