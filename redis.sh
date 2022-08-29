@@ -15,7 +15,7 @@ docker run \
   -e ALLOW_EMPTY_PASSWORD=yes \
   -d bitnami/redis:"$INPUT_VERSION"
 
-containerIp=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql)
+containerIp=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' redis)
 
 echo -e "${BL}Info:${NC} Wait for Redis to be up and receiving requests..."
 docker run \

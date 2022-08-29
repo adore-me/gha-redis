@@ -1,16 +1,12 @@
 # gha-redis
 
 ## Description
-Run composer install with custom PHP image.
+Run Redis.
 
 ## Inputs
-| Key               | Default   | Description                 |
-|-------------------|-----------|-----------------------------|
-| **version**       | `5.7`     | MySql version to use.       |
-| **root-password** | `secret`  | Root password.              |
-| **user**          | `adoreme` | Additional user.            |
-| **password**      | `secret`  | Additional user's password. |
-| **db-name**       | `adoreme` | Database name.              |
+| Key               | Default | Description                 |
+|-------------------|---------|-----------------------------|
+| **version**       | `6.0`   | MySql version to use.       |
 
 ## Outputs
 | Key               | Value                       |
@@ -21,18 +17,14 @@ Run composer install with custom PHP image.
 ```yaml
 steps:
   - name: 'Start MySql'
-    uses: adore-me/mysql-action@master
+    uses: adore-me/gha-redis@master
     with:
-      version: 5.7
-      root-password: ${{ secrets.MYSQL_ROOT_PASSWORD }}
-      user: ${{ secrets.MYSQL_USER }}
-      password: ${{ secrets.MYSQL_PASSWORD }}
-      db-name: ${{ secrets.MYSQL_DB_NAME }}
+      version: '6.0'
 ```
 
 You can skip the `with` section if you are ok with the default values.
 ```yaml
 steps:
   - name: 'Run Composer Install'
-    uses: adore-me/mysql-action@master
+    uses: adore-me/gha-redis@master
 ```
