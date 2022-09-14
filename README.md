@@ -4,9 +4,9 @@
 Run Redis.
 
 ## Inputs
-| Key               | Default | Description                 |
-|-------------------|---------|-----------------------------|
-| **version**       | `6.0`   | MySql version to use.       |
+| Key               | Required | Default   | Description             |
+|-------------------|----------|-----------|-------------------------|
+| **version**       | **true** | `6.0`     | MySql version to use.   |
 
 ## Outputs
 | Key               | Value                       |
