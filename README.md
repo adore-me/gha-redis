@@ -16,7 +16,7 @@ Run Redis.
 ### Example of step configuration and usage:
 ```yaml
 steps:
-  - name: 'Start MySql'
+  - name: 'Start Redis'
     uses: adore-me/gha-redis@master
     with:
       version: '6.0'
@@ -25,6 +25,6 @@ steps:
 You can skip the `with` section if you are ok with the default values.
 ```yaml
 steps:
-  - name: 'Run Composer Install'
+  - name: 'Start Redis'
     uses: adore-me/gha-redis@master
 ```
