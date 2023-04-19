@@ -28,4 +28,4 @@ if [ "$REDIS_LIVENESS_EXIT_CODE" != "0" ]; then
 fi
 
 echo -e "${BL}Info:${NC} Set Redis container ip to: $containerIp"
-echo "::set-output name=container-ip::$containerIp"
+echo "container-ip=$containerIp" >> "$GITHUB_OUTPUT"
